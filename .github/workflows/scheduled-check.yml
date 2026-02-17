@@ -1,0 +1,14 @@
+name: Scheduled Check
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+      - name: Run checks
+        run: npm run test
